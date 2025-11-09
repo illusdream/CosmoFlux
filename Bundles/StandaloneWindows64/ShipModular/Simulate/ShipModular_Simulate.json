@@ -1,0 +1,216 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "ShipModular",
+    "PackageVersion": "Simulate",
+    "PackageNote": "2025/11/9 18:00:56",
+    "AssetList": [
+        {
+            "Address": "Core0",
+            "AssetPath": "Assets/Assets/ShipModular/Core/Core0.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Core0Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Core/Core0Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Component_113_R",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Component_113_R.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Component_113_RPreview",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Component_113_RPreview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Component_117",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Component_117.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Component_117Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Component_117Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_FusionReactor0",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_FusionReactor0.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_FusionReactor0Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_FusionReactor0Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_FusionReactor1",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_FusionReactor1.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_FusionReactor1Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_FusionReactor1Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_SunPower",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_SunPower.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Energy_SunPowerPreview",
+            "AssetPath": "Assets/Assets/ShipModular/Energy/Energy_SunPowerPreview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine0",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine0.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine0Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine0Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine1",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine1.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine1Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine1Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine2",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine2.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Engine2Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Engine/Engine2Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Struct0",
+            "AssetPath": "Assets/Assets/ShipModular/Struct/Struct0.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Struct0Preview",
+            "AssetPath": "Assets/Assets/ShipModular/Struct/Struct0Preview.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "shipmodular_assets_assets_shipmodular_core.bundle",
+            "UnityCRC": 0,
+            "FileHash": "c6e54441fd90782f1e80e0f7df80d4a2",
+            "FileCRC": "00000000",
+            "FileSize": 181832,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "shipmodular_assets_assets_shipmodular_energy.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7b24bec46249301376b51a14fe1d1456",
+            "FileCRC": "00000000",
+            "FileSize": 738017,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "shipmodular_assets_assets_shipmodular_engine.bundle",
+            "UnityCRC": 0,
+            "FileHash": "d6f24d7911657c141a44cce855df1384",
+            "FileCRC": "00000000",
+            "FileSize": 436099,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "shipmodular_assets_assets_shipmodular_struct.bundle",
+            "UnityCRC": 0,
+            "FileHash": "6eac77d33d1e0cfa0b668abccce34f24",
+            "FileCRC": "00000000",
+            "FileSize": 195934,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

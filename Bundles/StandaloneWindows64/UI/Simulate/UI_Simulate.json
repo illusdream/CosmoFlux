@@ -1,0 +1,56 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "UI",
+    "PackageVersion": "Simulate",
+    "PackageNote": "2025/11/9 14:43:58",
+    "AssetList": [
+        {
+            "Address": "UIView_UIMainBuildView",
+            "AssetPath": "Assets/Assets/Prefab/UIView/UIMainBuildView.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UIView_UIModularListView",
+            "AssetPath": "Assets/Assets/Prefab/UIView/UIModularListView.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "ui_assets_assets_prefab_uiview_uimainbuildview.bundle",
+            "UnityCRC": 0,
+            "FileHash": "20fc9b89ae94e56252b6a60c93ca53e5",
+            "FileCRC": "00000000",
+            "FileSize": 25133,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "ui_assets_assets_prefab_uiview_uimodularlistview.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f7ecb74ff4cbea7a00e7e97c79b4861f",
+            "FileCRC": "00000000",
+            "FileSize": 72527,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

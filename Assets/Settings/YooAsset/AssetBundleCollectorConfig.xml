@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root Version="v2.1">
+  <Common ShowPackageView="True" ShowEditorAlias="True" UniqueBundleName="True" />
+  <Package PackageName="Base" PackageDesc="基础资源" AutoAddressable="True" LocationToLower="False" IncludeAssetGUID="False" IgnoreRuleName="NormalIgnoreRule">
+    <Group GroupActiveRule="EnableGroup" GroupName="Base" GroupDesc="" AssetTags="">
+      <Collector CollectPath="Assets/Resources/Mixer/MainAudioMixer.mixer" CollectGUID="658b95c81b9f263449211cb86288e2b7" CollectType="MainAssetCollector" AddressRule="AddressByFolderAndFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Config" GroupDesc="游戏运行时配置" AssetTags="Config">
+      <Collector CollectPath="Assets/Resources/ilsFramework/Configs" CollectGUID="be18f1b1adc756d4e80dc590cf2f8584" CollectType="MainAssetCollector" AddressRule="AddressByFolderAndFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Table" GroupDesc="配置表" AssetTags="Table">
+      <Collector CollectPath="Assets/Resources/ilsFramework/Table" CollectGUID="3046f4bc9358d3d4fb7ffc18990e252d" CollectType="MainAssetCollector" AddressRule="AddressByFolderAndFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+  </Package>
+</root>

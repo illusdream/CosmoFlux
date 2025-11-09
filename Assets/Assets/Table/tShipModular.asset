@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6c1643c0944bfe9af7fb9c3a43b90b, type: 3}
+  m_Name: tShipModular
+  m_EditorClassIdentifier: 
+  items:
+  - rid: 9024604802868314112
+  - rid: 9024604802868314113
+  - rid: 9024604802868314114
+  - rid: 9024604802868314115
+  - rid: 9024604802868314116
+  - rid: 9024604802868314117
+  - rid: 9024604802868314118
+  ExtraIndexes: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 9024604802868314112
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 1
+        Name: Struct0
+        ModularGroup: StructBase
+        Path: Assets/Assets/ShipModular/Struct/Struct0.prefab
+        ModularType: 0
+    - rid: 9024604802868314113
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 2
+        Name: Core0
+        ModularGroup: Core
+        Path: Assets/Assets/ShipModular/Core/Core0.prefab
+        ModularType: 0
+    - rid: 9024604802868314114
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 3
+        Name: FusionReactor0
+        ModularGroup: Energy
+        Path: Assets/Assets/ShipModular/Energy/Energy_FusionReactor0.prefab
+        ModularType: 2
+    - rid: 9024604802868314115
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 4
+        Name: FusionReactor1
+        ModularGroup: Energy
+        Path: Assets/Assets/ShipModular/Energy/Energy_FusionReactor1.prefab
+        ModularType: 2
+    - rid: 9024604802868314116
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 5
+        Name: Engine0
+        ModularGroup: Engine
+        Path: Assets/Assets/ShipModular/Engine/Engine0.prefab
+        ModularType: 1
+    - rid: 9024604802868314117
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 6
+        Name: Engine1
+        ModularGroup: Engine
+        Path: Assets/Assets/ShipModular/Engine/Engine1.prefab
+        ModularType: 1
+    - rid: 9024604802868314118
+      type: {class: tShipModular, ns: Game, asm: Game}
+      data:
+        ID: 7
+        Name: Engine2
+        ModularGroup: Engine
+        Path: Assets/Assets/ShipModular/Engine/Engine2.prefab
+        ModularType: 1

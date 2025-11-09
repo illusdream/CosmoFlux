@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6c1643c0944bfe9af7fb9c3a43b90b, type: 3}
+  m_Name: TestTableItem
+  m_EditorClassIdentifier: 
+  items:
+  - rid: 410607608595218443
+  - rid: 410607608595218444
+  indexes: []
+  ExtraIndexes: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 410607608595218443
+      type: {class: TestTableItem, ns: ilsFramework.Core, asm: Framework}
+      data:
+        ID: 1
+        TestInt: 1
+        TestString: a
+    - rid: 410607608595218444
+      type: {class: TestTableItem, ns: ilsFramework.Core, asm: Framework}
+      data:
+        ID: 2
+        TestInt: 1
+        TestString: a

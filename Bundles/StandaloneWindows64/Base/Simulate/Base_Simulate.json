@@ -1,0 +1,266 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "Base",
+    "PackageVersion": "Simulate",
+    "PackageNote": "2025/11/9 18:00:55",
+    "AssetList": [
+        {
+            "Address": "Camera_BuilderCamera",
+            "AssetPath": "Assets/Assets/Base/Camera/BuilderCamera.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Camera_Main Camera",
+            "AssetPath": "Assets/Assets/Base/Camera/Main Camera.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Camera_ShipControlCamera",
+            "AssetPath": "Assets/Assets/Base/Camera/ShipControlCamera.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Material_AimCenter",
+            "AssetPath": "Assets/Assets/Base/Material/AimCenter.mat",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Material_ModularModify",
+            "AssetPath": "Assets/Assets/Base/Material/ModularModify.mat",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Material_ModularSelect",
+            "AssetPath": "Assets/Assets/Base/Material/ModularSelect.mat",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Material_ModularShow",
+            "AssetPath": "Assets/Assets/Base/Material/ModularShow.mat",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "AimCenter",
+            "AssetPath": "Assets/Assets/Base/Prefab/AimCenter.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "GridPlane",
+            "AssetPath": "Assets/Assets/Base/Prefab/GridPlane.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Table_tShipModular",
+            "AssetPath": "Assets/Assets/Table/tShipModular.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Table"
+            ],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_Asset",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/Asset.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_AudioConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/AudioConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_DebugConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/DebugConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_FrameworkConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/FrameworkConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "LogConfigs_LogConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/LogConfigs/LogConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 5,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_PoolConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/PoolConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_Procedure",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/Procedure.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_TableConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/TableConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Configs_UIConfig",
+            "AssetPath": "Assets/Resources/ilsFramework/Configs/UIConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Config"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Mixer_MainAudioMixer",
+            "AssetPath": "Assets/Resources/Mixer/MainAudioMixer.mixer",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "base_assets_assets_base_camera.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b3846e211fdac136b6baf04452c89fd5",
+            "FileCRC": "00000000",
+            "FileSize": 28563,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_assets_base_material.bundle",
+            "UnityCRC": 0,
+            "FileHash": "9824e7bfeae8efbbddb15d264f904813",
+            "FileCRC": "00000000",
+            "FileSize": 5273,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_assets_base_prefab.bundle",
+            "UnityCRC": 0,
+            "FileHash": "25b84ee7bd0ca3ba044dabe6126b9749",
+            "FileCRC": "00000000",
+            "FileSize": 6895,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_assets_table.bundle",
+            "UnityCRC": 0,
+            "FileHash": "0dfe77d64c70a37645d8b6854b10a000",
+            "FileCRC": "00000000",
+            "FileSize": 2447,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_resources_ilsframework_configs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "1fc42b9361b302d7a0f7d89ead7e2b3e",
+            "FileCRC": "00000000",
+            "FileSize": 5137,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_resources_ilsframework_configs_logconfigs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "39e921547c8d275bb48770a1d1cb3db9",
+            "FileCRC": "00000000",
+            "FileSize": 519,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "base_assets_resources_mixer.bundle",
+            "UnityCRC": 0,
+            "FileHash": "ff98874492bfc805c1f112adce9d656a",
+            "FileCRC": "00000000",
+            "FileSize": 4123,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}
