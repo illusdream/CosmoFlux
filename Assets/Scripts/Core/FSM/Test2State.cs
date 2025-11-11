@@ -2,21 +2,21 @@
 
 namespace ilsFramework.Core
 {
-    public class TestState : State
+    public class Test2State : State
     {
-        public float timer = 1;
+        public float timer = 2;
 
         public override State GetTransition()
         {
             if (timer <= 0)
-               return GetStateInSameLayer("2");
+               return  GetStateInSameLayer("1");
             return null;
         }
 
         public override void OnEnter()
         {
-            timer = 1;
-            "切换1".WarningSelf();
+            timer = 2;
+            "切换2".WarningSelf();
             base.OnEnter();
         }
 

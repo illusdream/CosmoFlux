@@ -15,7 +15,7 @@ using RaycastHit = UnityEngine.RaycastHit;
 
 namespace Game
 {
-    public partial class  GameBuilderState : SubProcedureController
+    public partial class  GameBuilderState : State
     {
         public class PlaceState : ProcedureNode
         {

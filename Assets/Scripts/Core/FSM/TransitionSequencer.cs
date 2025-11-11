@@ -9,52 +9,114 @@ namespace ilsFramework.Core
     {
         public bool InTransition { get; private set; }
         
-        public Queue<StateTask> TransitionQueue { get; private set; } = new Queue<StateTask>();
+        public StateMachine StateMachine { get; private set; }
+
+        public Queue<UniTask?> TransitionQueue { get; private set; } = new Queue<UniTask?>();
 
         private List<UniTask> waitList = new List<UniTask>();
+        
+        private Stack<State> bufferStack = new Stack<State>();
 
-        public void Enqueue(StateTask stateTask)
+        public TransitionSequencer(StateMachine machine)
+        {
+            StateMachine = machine;
+        }
+
+        public void Enqueue(UniTask? stateTask)
         {
             TransitionQueue.Enqueue(stateTask);
         }
-        
-        public async Cysharp.Threading.Tasks.UniTaskVoid BeginTransition(Action startAction, Action endAction)
+
+        public async Cysharp.Threading.Tasks.UniTaskVoid BeginTransition(Action startAction, Action endTaskAction, Action endEnterAction)
         {
+            if(InTransition)
+                return;
             waitList.Clear();
+            bufferStack.Clear();
             InTransition = true;
             startAction?.Invoke();
             while (TransitionQueue.Count > 0)
             {
-                if (TransitionQueue.Dequeue().action is { } result)
+                if (TransitionQueue.Dequeue() is { } resultTask)
                 {
-                    waitList.Add(result.Invoke());
+                    waitList.Add(resultTask);
                 }
 
             }
-            
+
             await UniTask.WhenAll(waitList);
 
             waitList.Clear();
-            endAction?.Invoke();
+            endTaskAction?.Invoke();
             while (TransitionQueue.Count > 0)
             {
-                if (TransitionQueue.Dequeue().action is { } result)
+                if (TransitionQueue.Dequeue() is { } resultTask)
                 {
-                    waitList.Add(result.Invoke());
+                    waitList.Add(resultTask);
                 }
             }
+
             await UniTask.WhenAll(waitList);
+            endEnterAction?.Invoke();
             InTransition = false;
         }
-    }
 
-    public class StateTask
-    {
-        public StateTask(Func<UniTask> action)
+
+        public async UniTaskVoid BeginTransition(State from, State lca, State to)
         {
-            this.action = action;
+            if(InTransition)
+                return;
+            InTransition = true;
+            waitList.Clear();
+            bufferStack.Clear();
+            
+            for (var s = from; s != null && s != lca; s = s.Parent)
+            {
+                var state = StateMachine.chain.Pop();
+                state.AddExitTask(this);
+            }
+            while (TransitionQueue.Count > 0)
+            {
+                if (TransitionQueue.Dequeue() is { } resultTask)
+                {
+                    waitList.Add(resultTask);
+                }
+
+            }
+
+            await UniTask.WhenAll(waitList);
+
+            waitList.Clear();
+
+            for(var s = to; s != null && s != lca; s = s.Parent)
+                bufferStack.Push(s);
+
+            foreach (var state in bufferStack)
+            {
+                state.AddEnterTask(this);
+            }
+            while (TransitionQueue.Count > 0)
+            {
+                if (TransitionQueue.Dequeue() is { } resultTask)
+                {
+                    waitList.Add(resultTask);
+                }
+            }
+
+            await UniTask.WhenAll(waitList);
+            while (bufferStack.Count > 0)
+                StateMachine.chain.Push(bufferStack.Pop());
+            InTransition = false;
         }
-        
-        public readonly Func<UniTask> action;
+
+        public class StateTask
+        {
+            public StateTask(Func<UniTask> action)
+            {
+                this.action = action;
+            }
+
+            public readonly Func<UniTask> action;
+        }
     }
 }

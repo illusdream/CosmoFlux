@@ -24,13 +24,23 @@ namespace ilsFramework.Core
         
         public virtual State GetTransition() => null;
         
-        protected virtual void OnEnter() { }
-        protected virtual void OnExit() { }
-        protected virtual void OnUpdate(float deltaTime) { }
+        public virtual void OnInit() {}
+        public virtual void OnEnter() { }
+        public virtual void OnExit() { }
+
+        protected virtual void OnUpdate(float deltaTime)
+        {
+            OnUnityUpdate();
+        }
+        
+        public virtual void OnUnityUpdate() {}
+        public virtual void OnLateUpdate() {}
+        public virtual void OnFixedUpdate() {}
+        public virtual void OnLogicUpdate() {}
+        
 
         public void Enter()
         {
-            $"Entering state {FullKey}".LogSelf();
             OnEnter();
         }
         
@@ -40,7 +50,6 @@ namespace ilsFramework.Core
 
         public void Exit()
         {
-            $"Exiting state {FullKey}".LogSelf();
             OnExit();
         }
 
@@ -53,6 +62,7 @@ namespace ilsFramework.Core
             child.SetKeyInfo(newPrefix,key);
             Children[key] = child;
             stateMachine.states[string.Join('.',newPrefix,key)] = child;
+            child.OnInit();
         }
 
         public virtual void RemoveSelf()
@@ -84,17 +94,34 @@ namespace ilsFramework.Core
 
         public virtual void AddExitTask(in TransitionSequencer sequencer)
         {
-            sequencer.Enqueue(new StateTask(()=>UniTask.Create(async () =>
-            {
-                "Test".LogSelf();
-                await UniTask.WaitForSeconds(1);
-                "Test1".LogSelf();
-            })));
+
         }
 
         public virtual void AddEnterTask(in TransitionSequencer sequencer)
         {
-            sequencer.Enqueue(new StateTask(null));
+           
         }
+
+        public State GetStateInSameLayer(string key)
+        {
+            if(Parent != null && Parent.Children.TryGetValue(key, out var state))
+                return state;
+            return null;
+        }
+
+        public State GetStateInChild(string key)
+        {
+            if (Children.TryGetValue(key, out var state))
+            {
+                return state;
+            }
+            return null;
+        }
+
+        public bool IsLeaf()
+        {
+            return Children.Count == 0;
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using Component = UnityEngine.Component;
 
 namespace Game
 {
-    public partial class  GameBuilderState : SubProcedureController
+    public partial class  GameBuilderState : State
     {
         public class SelectState : ProcedureNode
         {

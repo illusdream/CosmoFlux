@@ -18,7 +18,7 @@ namespace ilsFramework.Core
         
         List<string> stateNamesBuffer = new List<string>();
         
-        private TransitionSequencer transitionSequencer = new TransitionSequencer();
+        private TransitionSequencer transitionSequencer;
 
         private string curStateKey;
         private List<string> curStateKeyList;
@@ -33,20 +33,38 @@ namespace ilsFramework.Core
         {
             Root = new RootState(this);
             states.Add("Root", Root);
+            transitionSequencer   = new TransitionSequencer(this);
         }
-        [ShowInInspector]
         public void UpdateState(float deltaTime)
         {
             foreach (var state in chain.GetStates())
             {
-                state.LogSelf();
                 state.Update(deltaTime);
             }
         }
 
         public void TransitionUpdate()
         {
-            
+            State targetState = null;
+            foreach (var state in chain.GetStates())
+            {
+                targetState = state.GetTransition();
+                if(targetState != null)
+                    break;
+            }
+
+            if (targetState == null)
+            {
+                return;
+            }
+#if UNITY_EDITOR
+            if (!states.ContainsKey(targetState.FullKey))
+            {
+                $"该状态机中不存在状态：{targetState.FullKey}".ErrorSelf();
+                return;
+            }
+#endif
+            ChangeState(targetState);
         }
 
         public void SequencerUpdate()
@@ -54,17 +72,39 @@ namespace ilsFramework.Core
             
         }
 
-        public void Update(float deltaTime)
+        public virtual void Update(float deltaTime)
         {
-            if(!transitionSequencer.InTransition)
+            if (!transitionSequencer.InTransition)
+            {
                 TransitionUpdate();
-            if (transitionSequencer.InTransition)
-                SequencerUpdate();
-            if(!transitionSequencer.InTransition)
                 UpdateState(deltaTime);
+            }
         }
-        
-        [ShowInInspector]
+
+        public virtual void FixedUpdate()
+        {
+            foreach (var state in chain.GetStates())
+            {
+                state.OnFixedUpdate();
+            }
+        }
+
+        public virtual void LateUpdate()
+        {
+            foreach (var state in chain.GetStates())
+            {
+                state.OnLateUpdate();
+            }
+        }
+
+        public virtual void LogicUpdate()
+        {
+            foreach (var state in chain.GetStates())
+            {
+                state.OnLogicUpdate();
+            }
+        }
+
         public void RegisterState(string stateName,State state)
         {
             string prefix ="";
@@ -82,7 +122,6 @@ namespace ilsFramework.Core
         {
             if (string.IsNullOrEmpty(prefix))
             {
-
                 Root.AddChild(key,state);
                 return;
             }
@@ -117,7 +156,7 @@ namespace ilsFramework.Core
                 }
             }
         }
-        [ShowInInspector]
+
         public State GetLca(string stateFrom, string stateTo)
         {
             
@@ -145,7 +184,7 @@ namespace ilsFramework.Core
             }
             return null;
         }
-        [ShowInInspector]
+
         public void StartFrom(string stateStart)
         {
             State currentStartState = null;
@@ -159,11 +198,11 @@ namespace ilsFramework.Core
                     currentStartState = next;
                     next = currentStartState.GetInitialState();
                 }
-                StartEnterChain(currentStartState, null);
+                transitionSequencer.BeginTransition(null,null,currentStartState);
                 IsExcuting = true;
             }
         }
-        [ShowInInspector]
+
         public void ChangeState(string stateTo)
         {
             if (states.TryGetValue(stateTo, out State state))
@@ -182,17 +221,26 @@ namespace ilsFramework.Core
             }
 #endif
             if(transitionSequencer.InTransition)
-                BufferStack.Clear();
+                return;
+            while (!targetState.IsLeaf() && targetState.GetInitialState() is { } nextState)
+            {
+                targetState =nextState;
+            }
+            
             var lca = GetLca(chain.currentState, targetState);
             if (lca != null)
             {
-                transitionSequencer.BeginTransition(()=> StartExitChain(chain.currentState,lca),()=>StartEnterChain(targetState, lca));
+                transitionSequencer.BeginTransition(chain.currentState,lca,targetState);
             }
+        }
+
+        public void StopStateMachine()
+        {
+            transitionSequencer.BeginTransition(chain.currentState,null,null);
         }
 
         private void StartExitChain(State start, State lca)
         {
-            start.LogSelf();
             for (var s = start; s != null && s != lca; s = s.Parent)
             {
                 var state = chain.Pop();
@@ -200,18 +248,29 @@ namespace ilsFramework.Core
             }
         }
 
-        private void StartEnterChain(State targetState,State lca)
+        private void ForeachEnterChainLoop(State targetState,State lca)
         {
-            BufferStack.Clear();
-            for(var s = targetState; s != null && s != lca; s = s.Parent)
-                BufferStack.Push(s);
 
-            foreach (var state in BufferStack)
-            {
-                state.AddEnterTask(transitionSequencer);
-            }
+
+        }
+
+        private void StartEnterChain(State target, State lca)
+        {
             while (BufferStack.Count > 0)
                 chain.Push(BufferStack.Pop());
+        }
+
+        public void Start()
+        {
+            IsExcuting = true;
+            chain.Clear();
+            StartFrom("Root");
+        }
+        
+
+        public void OnDestroy()
+        {
+            
         }
     }
 }

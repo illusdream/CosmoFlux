@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ae96407c7b45a3b1057a9037d544b0, type: 3}
   m_Name: UIConfig
   m_EditorClassIdentifier: Framework::ilsFramework.Core.UIConfig
-  UIEventHandler: {fileID: 0}
-  ReferenceResolution: {x: 0, y: 0}
+  UIEventHandler: {fileID: 8904417590120722480, guid: 20565b80c014aa34b96398e517f10ae5,
+    type: 3}
+  ReferenceResolution: {x: 1920, y: 1080}
   ResourceUITag: UI
-  UIViewCSharpFileFolderPath: 
-  UIViewCSharpNamespace: 
+  UIViewCSharpFileFolderPath: Assets/Assets/UI
+  UIViewCSharpNamespace: ilsFramework.Core

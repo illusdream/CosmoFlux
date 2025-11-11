@@ -12,18 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ad17b9a64d44d49b40a3a2d2286f28, type: 3}
   m_Name: FrameworkConfig
   m_EditorClassIdentifier: Framework::ilsFramework.Core.FrameworkConfig
-  LogicUpdateCountPerScecond: 0
-  ConfigsViewSort: []
+  LogicUpdateCountPerScecond: 50
+  ConfigsViewSort:
+  - Value: FrameworkConfig
+  - Value: LogConfigs
+  - Value: Asset
+  - Value: AudioConfig
+  - Value: DebugConfig
+  - Value: PoolConfig
+  - Value: Procedure
+  - Value: TableConfig
+  - Value: UIConfig
   ManagersUpdateSort:
+  - Value: ilsFramework.Core.AssetManager
   - Value: ilsFramework.Core.MonoManager
   - Value: ilsFramework.Core.ConfigManager
-  - Value: ilsFramework.Core.AssetManager
+  - Value: ilsFramework.Core.ProcedureManager
   - Value: Game.ShipManager
   - Value: InputManager
   - Value: Game.CameraManager
   - Value: Game.EntityManager
   - Value: Game.PlayerStatus
-  - Value: ilsFramework.Core.ProcedureManager
   - Value: ilsFramework.Core.TimerManager
   - Value: ilsFramework.Core.LoggerManager
   - Value: ilsFramework.Core.ManagerSingleton`1

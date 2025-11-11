@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
-    public class NormalGameState  : ProcedureNode
+    public class NormalGameState  : State
     {
+        public const string StateKey = "NormalGameState";
         public override void OnInit()
         {
             base.OnInit();
@@ -21,14 +22,13 @@ namespace Game
             base.OnEnter();
         }
 
-
-
-
-        public override void OnUpdate()
+        public override State GetTransition()
         {
-
-            base.OnUpdate();
+            if(InputManager.Instance.GetCurrentInputAction().BuildMode.SwitchBuildMode.WasPressedThisDynamicUpdate())
+                return GetStateInSameLayer(GameBuilderState.StateKey);
+            return base.GetTransition();
         }
+
 
         public override void OnLateUpdate()
         {
@@ -51,14 +51,11 @@ namespace Game
             base.OnExit();
         }
 
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
-        }
+
         
         private void SwitchBuildModeOnperformed(InputAction.CallbackContext obj)
         {
-            ChangeState<GameBuilderState>();
+          //  ChangeState<GameBuilderState>();
         }
     }
 }

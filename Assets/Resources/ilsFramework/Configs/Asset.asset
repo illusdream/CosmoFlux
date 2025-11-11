@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc7c9a4ab664619b92d1940139570f3, type: 3}
   m_Name: Asset
   m_EditorClassIdentifier: Framework::ilsFramework.Core.AssetConfig
-  NeedCleanUpMemoryThreshold: 0
+  NeedCleanUpMemoryThreshold: 500

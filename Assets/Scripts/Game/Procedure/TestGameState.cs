@@ -5,6 +5,7 @@ namespace Game
 {
     public class TestGameState : ProcedureNode
     {
+        public const string MainGameStateKey = "TestGameState";
         public override void OnInit()
         {
             base.OnInit();

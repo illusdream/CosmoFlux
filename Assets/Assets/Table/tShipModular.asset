@@ -11,20 +11,20 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd6c1643c0944bfe9af7fb9c3a43b90b, type: 3}
   m_Name: tShipModular
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Framework::ilsFramework.Core.TableAsset
   items:
-  - rid: 9024604802868314112
-  - rid: 9024604802868314113
-  - rid: 9024604802868314114
-  - rid: 9024604802868314115
-  - rid: 9024604802868314116
-  - rid: 9024604802868314117
-  - rid: 9024604802868314118
+  - rid: 6629263683220406272
+  - rid: 6629263683220406273
+  - rid: 6629263683220406274
+  - rid: 6629263683220406275
+  - rid: 6629263683220406276
+  - rid: 6629263683220406277
+  - rid: 6629263683220406278
   ExtraIndexes: []
   references:
     version: 2
     RefIds:
-    - rid: 9024604802868314112
+    - rid: 6629263683220406272
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
         ModularGroup: StructBase
         Path: Assets/Assets/ShipModular/Struct/Struct0.prefab
         ModularType: 0
-    - rid: 9024604802868314113
+    - rid: 6629263683220406273
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 2
@@ -40,7 +40,7 @@ MonoBehaviour:
         ModularGroup: Core
         Path: Assets/Assets/ShipModular/Core/Core0.prefab
         ModularType: 0
-    - rid: 9024604802868314114
+    - rid: 6629263683220406274
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 3
@@ -48,7 +48,7 @@ MonoBehaviour:
         ModularGroup: Energy
         Path: Assets/Assets/ShipModular/Energy/Energy_FusionReactor0.prefab
         ModularType: 2
-    - rid: 9024604802868314115
+    - rid: 6629263683220406275
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 4
@@ -56,7 +56,7 @@ MonoBehaviour:
         ModularGroup: Energy
         Path: Assets/Assets/ShipModular/Energy/Energy_FusionReactor1.prefab
         ModularType: 2
-    - rid: 9024604802868314116
+    - rid: 6629263683220406276
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 5
@@ -64,7 +64,7 @@ MonoBehaviour:
         ModularGroup: Engine
         Path: Assets/Assets/ShipModular/Engine/Engine0.prefab
         ModularType: 1
-    - rid: 9024604802868314117
+    - rid: 6629263683220406277
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 6
@@ -72,7 +72,7 @@ MonoBehaviour:
         ModularGroup: Engine
         Path: Assets/Assets/ShipModular/Engine/Engine1.prefab
         ModularType: 1
-    - rid: 9024604802868314118
+    - rid: 6629263683220406278
       type: {class: tShipModular, ns: Game, asm: Game}
       data:
         ID: 7

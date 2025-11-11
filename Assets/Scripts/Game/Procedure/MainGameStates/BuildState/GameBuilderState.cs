@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 
 namespace Game
 {
-    public partial class GameBuilderState : SubProcedureController
+    public partial class GameBuilderState : State
     {
+        public const string StateKey = "GameBuilderState";
         BuilderBaseCamera _baseCamera;
 
         public enum Stage
@@ -33,10 +34,10 @@ namespace Game
 
         public override void OnInit()
         {
-            this.AddState<SelectState>();
-            this.AddState<ModifyState>();
-            this.AddState<ShowModularState>();
-            this.AddState<PlaceState>();
+            //this.AddState<SelectState>();
+            //this.AddState<ModifyState>();
+            //this.AddState<ShowModularState>();
+            //this.AddState<PlaceState>();
             _hit = new RaycastHit[1];
             base.OnInit();
         }
@@ -57,22 +58,29 @@ namespace Game
             InputManager.Instance.SetPlayActionEnabledInput(false);
 
             Model.Value.EditingShipCore = ShipManager.PlayerControlShip;
-            StartState<SelectState>();
+            //StartState<SelectState>();
 
             base.OnEnter();
         }
 
+        public override State GetTransition()
+        {
+            if(InputManager.Instance.GetCurrentInputAction().BuildMode.SwitchBuildMode.WasPressedThisDynamicUpdate())
+                return GetStateInSameLayer(NormalGameState.StateKey);
+            return base.GetTransition();
+        }
+
         private void SwitchBuildModeOnperformed(InputAction.CallbackContext obj)
         {
-            Owner.ChangeState<NormalGameState>();
+            //Owner.ChangeState<NormalGameState>();
         }
 
         private void OpenModularListOnperformed(InputAction.CallbackContext obj)
         {
-            if (_currentState is not ShowModularState)
-            {
-                ChangeState<ShowModularState>();
-            }
+           // if (_currentState is not ShowModularState)
+           // {
+               // ChangeState<ShowModularState>();
+           // }
 
         }
 
@@ -81,31 +89,12 @@ namespace Game
         {
             if (!ShipManager.BuildTargetShip)
             {
-                Owner.ChangeState<NormalGameState>();
+               // Owner.ChangeState<NormalGameState>();
             }
             base.OnLogicUpdate();
 
         }
-
-        public override void OnUpdate()
-        {
-            /*
-            UpdateEyeRaycast();
-            switch (Model.Value.Stage)
-            {
-                case GameBuildStage.Place:
-                    OnPlaceModularStage();
-                    break;
-                case GameBuildStage.Modify:
-                    break;
-                case GameBuildStage.Destroy:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            */
-            base.OnUpdate();
-        }
+        
         
         public override void OnExit()
         {

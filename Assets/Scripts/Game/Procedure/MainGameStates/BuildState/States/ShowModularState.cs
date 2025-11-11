@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace Game
 {
-    public partial class  GameBuilderState : SubProcedureController
+    public partial class  GameBuilderState : State
     {
         public class ShowModularState : ProcedureNode
         {

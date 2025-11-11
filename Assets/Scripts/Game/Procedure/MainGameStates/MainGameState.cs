@@ -4,35 +4,39 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
-    public class MainGameState : SubProcedureController
+    public class MainGameState : State
     {
+        public const string MainGameStateKey = "MainGameState";
         public override void OnInit()
         {
-            this.AddState<NormalGameState>();
-            this.AddState<GameBuilderState>();
-            
+            this.AddChild(NormalGameState.StateKey,new NormalGameState());
+            this.AddChild(InMainMenuState.StateKey,new InMainMenuState());
+            this.AddChild(GameBuilderState.StateKey,new GameBuilderState());
             CameraManager.Instance.RegisterCamera<BuilderBaseCamera>();
             CameraManager.Instance.RegisterCamera<ShipControlBaseCamera>();
             base.OnInit();
         }
 
+        public override State GetInitialState()
+        {
+            return GetStateInChild(InMainMenuState.StateKey);
+        }
+        
         public override void OnEnter()
         {
-            SceneManager.LoadScene((int)EScene.Test);
-            SceneHandler.SceneOnLoaded += SceneHandlerOnSceneOnLoaded;
+            
+            //
+            //SceneHandler.SceneOnLoaded += SceneHandlerOnSceneOnLoaded;
             
             base.OnEnter();
         }
 
         private void SceneHandlerOnSceneOnLoaded(EventArgs obj)
         {
-            StartState<NormalGameState>();
+            //StartState<NormalGameState>();
         }
 
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-        }
+
 
         public override void OnLateUpdate()
         {
@@ -52,13 +56,10 @@ namespace Game
 
         public override void OnExit()
         {
-            SceneHandler.SceneOnLoaded -= SceneHandlerOnSceneOnLoaded;
+            
             base.OnExit();
         }
 
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
-        }
+
     }
 }

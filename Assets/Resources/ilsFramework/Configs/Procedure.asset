@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713c945b74a1424d8bd6824e8f682871, type: 3}
   m_Name: Procedure
   m_EditorClassIdentifier: Framework::ilsFramework.Core.ProcedureConfig
-  EnableCommenProcedure: 0
+  EnableCommenProcedure: 1
   EnableTestScene: 0

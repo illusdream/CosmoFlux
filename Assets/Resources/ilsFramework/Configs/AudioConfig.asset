@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f976045d4e243feab011f9147b77c5c, type: 3}
   m_Name: AudioConfig
   m_EditorClassIdentifier: Framework::ilsFramework.Core.AudioConfig
-  AudioMixerPath: Mixer/MainAudioMixe
+  AudioMixerPath: Assets/Resources/Mixer/MainAudioMixer.mixer
   MainChannelVolumeMin: -80
   MainChannelVolumeMax: 0
   audioChannelDatas: []

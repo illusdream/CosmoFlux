@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace ilsFramework.Core
 {
@@ -9,15 +10,14 @@ namespace ilsFramework.Core
     {
         [ShowInInspector]
         ProcedureController _procedureController;
-    
+        [ShowInInspector]
+        StateMachine procedureStateMachine;
         ProcedureConfig procedureConfig;
         
         public bool GameProcedureEnabled { get; private set; }
 
         private Type procedureInitializerType;
-
-        [ShowInInspector]
-        public StateMachine StateMachine { get; private set; } = new StateMachine();
+        
         public override IEnumerator OnInit()
         {
             procedureConfig = Config.GetConfig<ProcedureConfig>();
@@ -25,13 +25,8 @@ namespace ilsFramework.Core
             GameProcedureEnabled = procedureConfig.EnableCommenProcedure;
         
             _procedureController = new ProcedureController();
+            procedureStateMachine = new StateMachine();
             FrameworkCore.Instance.AfterAllManagerInitialized += AfterAllManagerInitialized;
-            var state = new TestState();
-            StateMachine.RegisterState("1",state);
-            StateMachine.RegisterState("2",new TestState());
-            StateMachine.RegisterState("1.1",new TestState());
-            StateMachine.RegisterState("1.2",new TestState());
-            
             yield return null;
         }
 
@@ -39,8 +34,8 @@ namespace ilsFramework.Core
         {
             if (procedureInitializerType != null && Activator.CreateInstance(procedureInitializerType) is ProcedureInitializer instance)
             {
-                instance.InitializeProcedure(_procedureController);
-
+                instance.InitializeProcedure(procedureStateMachine);
+                instance.StartProcedure(procedureStateMachine);
             }
         }
 
@@ -62,7 +57,9 @@ namespace ilsFramework.Core
             if (GameProcedureEnabled)
             {
                 _procedureController.Update();
+                procedureStateMachine.Update(Time.deltaTime);
             }
+            
         }
 
         public override void OnLateUpdate()
@@ -70,6 +67,7 @@ namespace ilsFramework.Core
             if (GameProcedureEnabled)
             {
                 _procedureController.LateUpdate();
+                procedureStateMachine.LateUpdate();
             }
         }
 
@@ -78,6 +76,7 @@ namespace ilsFramework.Core
             if (GameProcedureEnabled)
             {
                 _procedureController.LogicUpdate();
+                procedureStateMachine.LogicUpdate();
             }
         }
 
@@ -86,6 +85,7 @@ namespace ilsFramework.Core
             if (GameProcedureEnabled)
             {
                 _procedureController.FixedUpdate();
+                procedureStateMachine.FixedUpdate();
             }
         }
 

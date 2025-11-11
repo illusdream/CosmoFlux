@@ -2,12 +2,9 @@ using ilsFramework.Core;
 
 namespace Game
 {
-    public class InitializeState : ProcedureNode
+    public class InitializeState : State
     {
-        public override void ChangeStateByPopStack()
-        {
-            base.ChangeStateByPopStack();
-        }
+        public const string StateKey = "InitializeState";
 
         public override void OnInit()
         {
@@ -19,19 +16,24 @@ namespace Game
             base.OnEnter();
         }
 
-        public override void OnUpdate()
+        public override State GetTransition()
         {
             if (!Config.GetConfig<ProcedureConfig>().EnableTestScene)
             {
-                ChangeState<MainGameState>();
+                return GetStateInSameLayer(MainGameState.MainGameStateKey);
             }
             else
             {
-                ChangeState<TestGameState>();
+                return GetStateInSameLayer(TestGameState.MainGameStateKey);
             }
-            base.OnUpdate();
+            return null;
         }
 
+        public override void OnUnityUpdate()
+        {
+            base.OnUnityUpdate();
+        }
+        
         public override void OnLateUpdate()
         {
             base.OnLateUpdate();
@@ -51,11 +53,7 @@ namespace Game
         {
             base.OnExit();
         }
-
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
-        }
+        
         
     }
 }

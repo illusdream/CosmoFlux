@@ -15,6 +15,7 @@
             child.SetKeyInfo("",key);
             Children[key] = child;
             stateMachine.states[key] = child;
+            child.OnInit();
         }
     }
 }

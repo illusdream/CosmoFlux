@@ -8,7 +8,7 @@
     "BuildPipeline": "EditorSimulateBuildPipeline",
     "PackageName": "Base",
     "PackageVersion": "Simulate",
-    "PackageNote": "2025/11/9 18:00:55",
+    "PackageNote": "2025/11/11 17:44:37",
     "AssetList": [
         {
             "Address": "Camera_BuilderCamera",
@@ -227,7 +227,7 @@
             "UnityCRC": 0,
             "FileHash": "0dfe77d64c70a37645d8b6854b10a000",
             "FileCRC": "00000000",
-            "FileSize": 2447,
+            "FileSize": 2486,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -257,7 +257,7 @@
             "UnityCRC": 0,
             "FileHash": "ff98874492bfc805c1f112adce9d656a",
             "FileCRC": "00000000",
-            "FileSize": 4123,
+            "FileSize": 4268,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff8f2185bfc433685eb2bedd35b2cdd, type: 3}
   m_Name: TableConfig
   m_EditorClassIdentifier: Framework::ilsFramework.Core.TableConfig
-  TargetFolder: 
+  TargetFolder: Assets/Assets/Table
